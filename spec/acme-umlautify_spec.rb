@@ -17,7 +17,7 @@ module Acme
         it "should modify in place" do
           first = "this_string"
           second = first.umlautify!
-          second.should == "thïs_strïng" && first.should == "this_string"
+          second.should == "thïs_strïng" && first.should == "thïs_strïng"
         end
       end
 
