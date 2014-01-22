@@ -7,13 +7,34 @@ module Acme
       describe ".umlautify!" do
         
         it "should sprinkle band names with umlauts liberally" do
-          String.new("Motorhead").umlautify!.should == "Mötörhëäd"
+          "Motorhead".umlautify!.should == "Mötörhëäd"
         end
         
         it "should handle all cases of vowels" do
-          String.new("aeiouAEIOUyY").umlautify!.should == "äëïöüÄËÏÖÜÿŸ"
+          "aeiouAEIOUyY".umlautify!.should == "äëïöüÄËÏÖÜÿŸ"
         end
         
+        it "should modify in place" do
+          first = "this_string"
+          second = first.umlautify!
+          second.should == "thïs_strïng" && first.should == "this_string"
+        end
+      end
+
+      describe ".umlautify" do
+        it "should sprinkle band names with umlauts liberally" do
+          "Motley Crue".umlautify.should == "Mötlëÿ Crüë"
+        end
+      
+        it "should handle all vowels" do
+          "aeiouAEIOUyY".umlautify.should == "äëïöüÄËÏÖÜÿŸ"
+        end
+      
+        it "shouldn't mutate" do
+          first = "this_string"
+          second = first.umlautify
+          second.should == "thïs_strïng" && first.should == "this_string"
+        end
       end
     end
   end
