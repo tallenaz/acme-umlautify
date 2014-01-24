@@ -4,17 +4,9 @@ A port of Philip Pollard's perl Acme::Umlautify. It will add umlauts to everythi
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'acme-umlautify'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install acme-umlautify
+    git clone https://github.com/tallenaz/acme-umlautify.git
+    cd acme-umlautify
+    rake install
 
 ## Usage
 
